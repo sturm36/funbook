@@ -1,0 +1,48 @@
+
+<div class="subjects index">
+<h2>Countries</h2>
+
+<%= link_to("Add new Country if NOT listed here!",{:action => 'new'}, :class => 'action new')%>
+
+<hr>
+
+<table>
+	<tr>
+	<th>srno.--</th>
+	<th>Countries--  </th>
+	<th>POPULATION--  </th>
+	<th>CURRENCY</th>
+	<th>WIKILINK--  </th>
+	<th>AREA-- </th>
+	
+	
+	
+	<th>LITERACY.. </th>
+	<th>ACTION  </th>
+	<th>TIMEZONE </th>	
+	</tr>
+
+<% @countries.each do |country|%>
+	<tr>
+		<td><%= country.position %></td>
+		<td><%= country.name %></td>
+		<td><%= country.population%></td>
+		<td><%= country.currency%></td>
+		<td><a href = "<%= country.wikilink %>">
+		<%= country.wikilink %></a></td>
+		<td><%= country.area%> sqft.</td>
+		
+		
+		<td><%= country.literacy%></td>
+		<td class="actions">
+			<%= link_to("states",{:action => 'states', :id=> 'country.id'}, :class => 'action states') %>
+		</td>
+		<td><%= country.timezone%></td>
+
+	</tr>	
+
+	
+<% end %>
+
+</table>
+</div>

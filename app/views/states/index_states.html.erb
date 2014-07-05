@@ -1,0 +1,35 @@
+<div class="subjects index">
+<h2>States</h2>
+
+<%= link_to("Add new state",{:action => 'state_new'}, :class => 'action new')%>
+
+<hr>
+
+<table>
+	<tr>
+	<th>srno.</th>
+	<th>State  </th>
+	<th>population  </th>
+	<th>wikilink  </th>
+	<th>area  </th>
+	<th>Actions</th>
+	</tr>
+
+<% @states.each do |state|%>
+	<tr>
+		<td><%= state.position %></td>
+		<td><%= state.name %></td>
+		<td><%=state.population%></td>
+		<td><a href = "<%= state.wikilink %>">
+		<%= state.wikilink %></a></td>
+		<td><%= state.area%> sqft.</td>
+		<td class="actions">
+			<%= link_to("cities",{:action => 'cities', :id=> 'state.id'}, :class => 'action index_states') %>
+		</td>
+	</tr>	
+
+	
+<% end %>
+
+</table>
+</div>

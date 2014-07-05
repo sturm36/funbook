@@ -1,0 +1,32 @@
+<div class="subjects index">
+<h2>Cities</h2>
+
+<%= link_to("Add new Cities",{:action => 'new'}, :class => 'action new')%>
+
+<hr>
+
+<table>
+	<tr>
+	<th>srno.</th>
+	<th>Cities  </th>
+	<th>population  </th>
+	<th>wikilink  </th>
+	<th>area  </th>
+	</tr>
+
+<% @cities.each do |city|%>
+	<tr>
+		<td><%= city.position %></td>
+		<td><%= city.name %></td>
+		<td><%= city.population%></td>
+		<td><a href = "<%= city.wikilink %>">
+		<%= city.wikilink %></a></td>
+		<td><%= city.area%> sqft.</td>
+		
+	</tr>	
+
+	
+<% end %>
+
+</table>
+</div>

@@ -1,0 +1,67 @@
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+
+<div class="countries new">
+
+
+	<h2>ADD NEW COUNTRY</h2>
+	<%= form_for(:country , :url => {:action => 'create'}) do |f| %>
+
+	<table>
+		<tr>
+			<th>Position</th>
+			<td><%= f.text_field(:position)%></td>
+		</tr>
+
+
+		<tr>
+			<th>Name</th>
+			<td><%= f.text_field(:name)%></td>
+		</tr>
+
+		<tr>
+			<th>ID</th>
+			<td><%= f.text_field(:id)%></td>
+		</tr>
+
+		<tr>
+			<th>Population</th>
+			<td><%= f.text_field(:population)%></td>
+		</tr>
+
+		<tr>
+			<th>Wikilink</th>
+			<td><%= f.text_field(:wikilink)%></td>
+		</tr>
+
+		<tr>
+			<th>Area</th>
+			<td><%= f.text_field(:area)%></td>
+		</tr>
+
+
+		<tr>
+			<th>Currency</th>
+			<td><%= f.text_field(:currency)%></td>
+		</tr>
+
+		<tr>
+			<th>Timezone</th>
+			<td><%= f.text_field(:timezone)%></td>
+		</tr>
+
+		<tr>
+			<th>Literacy</th>
+			<td><%= f.text_field(:literacy)%></td>
+		</tr>
+
+
+
+
+	</table>	
+
+	<div class="form-button">
+		<%= submit_tag("ADD COUNTRY!!")%>
+	</div>
+
+	<% end %>
+</div>
